@@ -26,7 +26,7 @@ namespace TaskboardPOM.Pages
             InputTitle.SendKeys(title);
         }
 
-        public void ClickCreate()
+        public void ClickCreateTask()
         {
             ButtonCreate.Click();
         }

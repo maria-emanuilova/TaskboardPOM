@@ -29,7 +29,7 @@ namespace TaskboardPOM.Tests
         public void Test_Create_TryEmptyTitle()
         {
             CreatePage.FillDescription("This is test description");
-            CreatePage.ClickCreate();
+            CreatePage.ClickCreateTask();
 
             Assert.That(CreatePage.getErrorMessageText(), Is.EqualTo("Error: Title cannot be empty!"));
         }
@@ -45,7 +45,7 @@ namespace TaskboardPOM.Tests
             string title = "First task for the day" + DateTime.Now.Ticks;
             CreatePage.FillTitle(title);
             CreatePage.FillDescription("to do");
-            CreatePage.ClickCreate();
+            CreatePage.ClickCreateTask();
             Assert.That(TaskBoardPage.GetLastOpenTaskTitleText(), Is.EqualTo(title), "Check new task title");
 
             BasePage.ClickHome();

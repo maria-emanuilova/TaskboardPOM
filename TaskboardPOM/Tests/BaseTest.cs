@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using TaskboardPOM.Pages;
+
 
 namespace TaskboardPOM.Tests
 {
-    public class BaseTest
-    {
+    public class BaseTest { 
+
         protected WebDriver driver;
 
         [SetUp]
         public void SetUp()
         {
-            this.driver = new ChromeDriver();
+            driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         }
