@@ -10,19 +10,19 @@ namespace TaskboardPOM.Tests
 {
     public class HomePageTests : BaseTest
     {
-        private HomePage page;
+        private HomePage HomePage;
 
         [SetUp]
         public void SetUp()
         {
-            this.page = new HomePage(driver);
-            page.OpenPage();
+            this.HomePage = new HomePage(driver);
+            HomePage.OpenPage();
         }
 
         [Test]
         public void Test_IsPageOpen()
         {
-            Assert.That(page.isPageOpen(), Is.True);
+            Assert.That(HomePage.isPageOpen(), Is.True);
         }
     }
 }

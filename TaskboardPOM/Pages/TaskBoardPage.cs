@@ -15,11 +15,19 @@ namespace TaskboardPOM.Pages
         public IWebElement FirstDoneTask => driver.FindElement(By.Id("task1"));
         public IWebElement FirstDoneTaskTitle => FirstDoneTask.FindElements(By.ClassName("title")).First();
         public IWebElement FirstDoneTaskTitleContent => FirstDoneTaskTitle.FindElement(By.TagName("td"));
+        public IWebElement OpenTasks => driver.FindElements(By.ClassName("task")).First();
+        public IWebElement LastOpenTask => OpenTasks.FindElements(By.ClassName("task-entry")).Last();
+        public IWebElement LastOpenTaskTitle => LastOpenTask.FindElement(By.TagName("td"));
+
 
         public string getFirstDoneTaskTitleText()
         {
             return FirstDoneTaskTitleContent.Text;
         }
 
+        public string GetLastOpenTaskTitleText()
+        {
+            return LastOpenTaskTitle.Text;
+        }
     }
 }

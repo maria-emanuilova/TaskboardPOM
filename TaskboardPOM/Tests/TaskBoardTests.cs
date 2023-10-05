@@ -11,25 +11,25 @@ namespace TaskboardPOM.Tests
 {
     public class TaskBoardTests: BaseTest
     {
-        private TaskBoardPage page;
+        private TaskBoardPage TaskBoardPage;
 
         [SetUp]
         public void SetUp()
         {
-            this.page = new TaskBoardPage(driver);
-            page.OpenPage();
+            this.TaskBoardPage = new TaskBoardPage(driver);
+            TaskBoardPage.OpenPage();
         }
 
         [Test]
         public void Test_IsTaskBoardPageOpen()
         {
-            Assert.That(page.isPageOpen, Is.True);
+            Assert.That(TaskBoardPage.isPageOpen, Is.True);
         }
 
         [Test]
         public void Test_VerifyFirstDoneTaskTitle()
         {
-            Assert.That(page.getFirstDoneTaskTitleText(), Is.EqualTo("Project skeleton"), "Check the first Done task Title");
+            Assert.That(TaskBoardPage.getFirstDoneTaskTitleText(), Is.EqualTo("Project skeleton"), "Check the first Done task Title");
         }
     }
 }
