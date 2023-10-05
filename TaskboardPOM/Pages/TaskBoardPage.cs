@@ -19,7 +19,6 @@ namespace TaskboardPOM.Pages
         public IWebElement LastOpenTask => OpenTasks.FindElements(By.ClassName("task-entry")).Last();
         public IWebElement LastOpenTaskTitle => LastOpenTask.FindElement(By.TagName("td"));
 
-
         public string getFirstDoneTaskTitleText()
         {
             return FirstDoneTaskTitleContent.Text;

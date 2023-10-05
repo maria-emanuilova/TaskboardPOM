@@ -38,7 +38,8 @@ namespace TaskboardPOM.Tests
         public void Test_Create_ValidTask()
         {
             HomePage.OpenPage();
-            var TasksCount = int.Parse(HomePage.GetTasksCount());
+            //convert task count to int 
+            var TasksCount = int.Parse(HomePage.GetTasksCountText());
 
             CreatePage.OpenPage();
             string title = "First task for the day" + DateTime.Now.Ticks;
@@ -49,7 +50,7 @@ namespace TaskboardPOM.Tests
 
             BasePage.ClickHome();
 
-            var NewTasksCount = int.Parse(HomePage.GetTasksCount());
+            var NewTasksCount = int.Parse(HomePage.GetTasksCountText());
             Assert.That(NewTasksCount, Is.EqualTo(TasksCount + 1), "Verify task count is increased by 1");
         }
     }

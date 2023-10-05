@@ -14,7 +14,7 @@ namespace TaskboardPOM.Pages
         public override string BaseUrl => "https://taskboard.mariaemanuilova.repl.co/";
         public IWebElement Tasks => driver.FindElement(By.XPath("//span[contains(.,'Tasks: ')]/b"));
 
-        public string GetTasksCount()
+        public string GetTasksCountText()
         {
             return Tasks.Text;
         }

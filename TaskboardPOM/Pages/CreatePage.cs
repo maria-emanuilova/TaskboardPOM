@@ -15,9 +15,6 @@ namespace TaskboardPOM.Pages
         public IWebElement InputTitle => driver.FindElement(By.Id("title"));
         public IWebElement ButtonCreate => driver.FindElement(By.Id("create"));
         public IWebElement ErrorMessage => driver.FindElement(By.ClassName("err"));
-        
-
-
 
         public void FillDescription(string description)
         {
