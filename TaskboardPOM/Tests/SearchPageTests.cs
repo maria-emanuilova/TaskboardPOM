@@ -10,32 +10,32 @@ namespace TaskboardPOM.Tests
 {
     public class SearchPageTests : BaseTest
     {
-        private SearchPage page;
+        private SearchPage SearchPage;
 
         [SetUp]
         public void SetUp()
         {
-            this.page = new SearchPage(driver);
-            page.OpenPage();
+            this.SearchPage = new SearchPage(driver);
+            SearchPage.OpenPage();
         }
 
         [Test]
         public void Test_CheckSearch_FirstHomeTaskTitle()
         {
-            page.TypeKeyword("home");
-            page.ClickSearch();
+            SearchPage.TypeKeyword("home");
+            SearchPage.ClickSearch();
 
-            Assert.That(page.GetCellFirstTaskFoundText(), Is.EqualTo("Title"));
-            Assert.That(page.GetFirstTaskFoundTitle(), Is.EqualTo("Home page"));
+            Assert.That(SearchPage.GetCellFirstTaskFoundText(), Is.EqualTo("Title"));
+            Assert.That(SearchPage.GetFirstTaskFoundTitle(), Is.EqualTo("Home page"));
         }
 
         [Test]
         public void Test_CheckSearch_NoResults()
         {
-            page.TypeKeyword("missing" + DateTime.Now.Ticks);
-            page.ClickSearch();
+            SearchPage.TypeKeyword("missing" + DateTime.Now.Ticks);
+            SearchPage.ClickSearch();
 
-            Assert.That(page.GetSearchResultText(), Is.EqualTo("No tasks found."), "Check results text content.");
+            Assert.That(SearchPage.GetSearchResultText(), Is.EqualTo("No tasks found."), "Check results text content.");
         }
     }
 }
